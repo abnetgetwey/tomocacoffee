@@ -17,7 +17,7 @@ function addToCart(productName, price) {
     updateCartUI();
     showToast(`${productName} added to cart!`);
     
-    // If we are on the Shop or Index page, open sidebar
+    // If we are on a page with a sidebar (Shop or Index), open it
     const sidebar = document.getElementById('cart-sidebar');
     if(sidebar) {
         toggleCart();
@@ -47,7 +47,7 @@ function updateCartUI() {
 
     // Render Items (Sidebar for Index/Shop, Main for Cart.html)
     const cartSidebarContainer = document.getElementById('cart-items-container');
-    const cartPageContainer = document.getElementById('cart-page-items'); // For Cart.html
+    const cartPageContainer = document.getElementById('cart-page-items'); 
     
     let total = 0;
     let htmlContent = '';
@@ -61,7 +61,7 @@ function updateCartUI() {
                 <div class="cart-item">
                     <div class="cart-item-info">
                         <div class="cart-item-title">${item.name}</div>
-                        <div class="cart-item-price">$${item.price}</div>
+                        <div class="cart-item-price">ETB ${item.price}</div>
                     </div>
                     <button class="remove-btn" onclick="removeFromCart(${item.id})">&times;</button>
                 </div>
@@ -74,7 +74,7 @@ function updateCartUI() {
 
     // Update Total
     const totalDisplays = document.querySelectorAll('.cart-total-price');
-    totalDisplays.forEach(el => el.innerText = '$' + total.toFixed(2));
+    totalDisplays.forEach(el => el.innerText = 'ETB ' + total.toFixed(2));
 }
 
 // 5. Toggle Sidebar (Only for Index/Shop)
@@ -103,18 +103,19 @@ function showToast(message) {
     }, 3000);
 }
 
-// 7. Checkout Logic
+// 7. GENERATE PDF CHECKOUT LOGIC
 function checkout() {
     if(cart.length === 0) {
         alert("Your cart is empty!");
         return;
     }
-    alert("Proceeding to checkout. Total: " + document.querySelector('.cart-total-price').innerText);
-    cart = [];
-    saveCart();
-    updateCartUI();
-    toggleCart(); // Close sidebar if open
-    window.location.href = 'index.html'; // Redirect home
+
+    // Alert user what is happening
+    alert("Generating your Payment Invoice PDF...");
+
+    // Trigger Browser Print Dialog
+    // This allows you to Save as PDF
+    window.print();
 }
 
 // Initialize UI on page load

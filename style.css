@@ -528,3 +528,52 @@ footer {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+/* --- PRINT STYLES FOR PDF GENERATION --- */
+@media print {
+    /* Hide Navigation, Header, Footer, Hero, Toast, Buttons */
+    nav, .top-brand, .hero-container, .bottom-gallery, footer, 
+    .cart-overlay, .close-cart, .remove-btn, .checkout-btn, #toast, .dot, .line {
+        display: none !important;
+    }
+
+    /* Reset Body for White Paper */
+    body {
+        background-color: white !important;
+        color: black !important;
+        display: block !important;
+        overflow: visible !important;
+        position: static !important;
+    }
+
+    /* Show the Cart (Either Sidebar or Page) */
+    #cart-sidebar, .cart-page-wrapper {
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        background: white !important;
+        color: black !important;
+        border: none !important;
+        box-shadow: none !important;
+        transform: none !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: 0 !important;
+        z-index: 1 !important;
+    }
+
+    /* Fix Text Colors for Print (Turn Gold/Red to Black) */
+    .cart-header h2, .cart-item-title, .section-title {
+        color: black !important;
+        border-bottom-color: black !important;
+    }
+    
+    .cart-item-price, .cart-total-price {
+        color: black !important;
+    }
+
+    /* Force content to visible */
+    .cart-items {
+        overflow: visible !important;
+    }
+}
