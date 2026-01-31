@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomoca Coffee - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-brand">
+        <img src="C:\Users\USER\Downloads\Portifolio\Tomoca\img\logo.png" alt="Logo" class="logo-img">
+        <h1 style="margin:0; font-size: inherit; line-height: normal;">Tomoca Coffee</h1>
+    </div>
+
+    <nav>
+        <a href="index.html" class="nav-btn active">Home</a>
+        <a href="AboutUs.html" class="nav-btn">About Us</a>
+        <a href="Contact.html" class="nav-btn">Contact</a>
+        <a href="Shop.html" class="nav-btn">Shop</a>
+        <a href="Cart.html" class="nav-btn">Cart <span id="cart-count">0</span></a>
+    </nav>
+
+    <section id="home" class="hero-container">
+        <div class="hero-text">
+            <h1>Tomoca Coffee<br>Coffee</h1>
+            <div class="slider-control">
+                <div class="dot"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="C:\Users\USER\Downloads\Portifolio\Tomoca\img\tomocacup.png" alt="Coffee Cup and Beans">
+        </div>
+    </section>
+
+    <div class="bottom-gallery">
+        <div class="gallery-box" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500');"></div>
+        <div class="gallery-box" style="background-image: url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=500');"></div>
+        <div class="gallery-box" style="background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500');"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tomoca Coffee. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart Sidebar UI -->
+    <div class="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="cart-total-price">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <div id="toast">Item added to cart!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

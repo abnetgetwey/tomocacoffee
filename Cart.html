@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomoca Coffee - Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-brand">
+        <img src="C:\Users\USER\Downloads\Portifolio\Tomoca\img\logo.png" alt="Logo" class="logo-img">
+        <h1 style="margin:0; font-size: inherit; line-height: normal;">Tomoca Coffee</h1>
+    </div>
+
+    <nav>
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="AboutUs.html" class="nav-btn">About Us</a>
+        <a href="Contact.html" class="nav-btn">Contact</a>
+        <a href="Shop.html" class="nav-btn">Shop</a>
+        <a href="Cart.html" class="nav-btn active">Cart <span id="cart-count">0</span></a>
+    </nav>
+
+    <section id="cart" class="section-container" style="display: block;">
+        <div class="title-wrapper">
+            <h2 class="section-title">Your Shopping Cart</h2>
+        </div>
+
+        <!-- This wraps the cart content to look like a full page cart -->
+        <div class="cart-page-wrapper">
+            <div class="cart-items" id="cart-page-items">
+                <!-- Items injected by JS -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="cart-total-price">$0.00</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tomoca Coffee. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

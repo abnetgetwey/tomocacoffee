@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomoca Coffee - Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-brand">
+        <img src="C:\Users\USER\Downloads\Portifolio\Tomoca\img\logo.png" alt="Logo" class="logo-img">
+        <h1 style="margin:0; font-size: inherit; line-height: normal;">Tomoca Coffee</h1>
+    </div>
+
+    <nav>
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="AboutUs.html" class="nav-btn">About Us</a>
+        <a href="Contact.html" class="nav-btn active">Contact</a>
+        <a href="Shop.html" class="nav-btn">Shop</a>
+        <a href="Cart.html" class="nav-btn">Cart <span id="cart-count">0</span></a>
+    </nav>
+
+    <section id="contact" class="section-container">
+        <div class="title-wrapper">
+            <h2 class="section-title">Contact Us</h2>
+        </div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to Tomoca Coffee.');">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea rows="5" placeholder="How can we help you?" required></textarea>
+            </div>
+            <button type="submit" class="buy-btn" style="width: 100%;">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tomoca Coffee. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

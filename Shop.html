@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomoca Coffee - Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-brand">
+        <img src="C:\Users\USER\Downloads\Portifolio\Tomoca\img\logo.png" alt="Logo" class="logo-img">
+        <h1 style="margin:0; font-size: inherit; line-height: normal;">Tomoca Coffee</h1>
+    </div>
+
+    <nav>
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="AboutUs.html" class="nav-btn">About Us</a>
+        <a href="Contact.html" class="nav-btn">Contact</a>
+        <a href="Shop.html" class="nav-btn active">Shop</a>
+        <a href="Cart.html" class="nav-btn">Cart <span id="cart-count">0</span></a>
+    </nav>
+
+    <section id="shop" class="section-container">
+        <div class="title-wrapper">
+            <h2 class="section-title">Shop Our Beans</h2>
+        </div>
+        <div class="shop-grid">
+            <div class="product-card">
+                <div>
+                    <img src="C:\Users\USER\Downloads\Portifolio\Tomoca\img\yirgacheffe.jpg" alt="Coffee Beans">
+                    <div class="product-title">Yirgacheffe</div>
+                    <p style="color:#aaa; margin-bottom:10px;">Fruity & Floral</p>
+                </div>
+                <button class="buy-btn" onclick="addToCart('Yirgacheffe', 15)">Add to Cart - $15</button>
+            </div>
+            <div class="product-card">
+                <div>
+                    <img src="C:\Users\USER\Downloads\Portifolio\Tomoca\img\sidamo.jpg" alt="Coffee Beans">
+                    <div class="product-title">Sidamo</div>
+                    <p style="color:#aaa; margin-bottom:10px;">Spicy & Complex</p>
+                </div>
+                <button class="buy-btn" onclick="addToCart('Sidamo', 18)">Add to Cart - $18</button>
+            </div>
+            <div class="product-card">
+                <div>
+                    <img src="C:\Users\USER\Downloads\Portifolio\Tomoca\img\harar.jpg" alt="Coffee Beans">
+                    <div class="product-title">Harrar</div>
+                    <p style="color:#aaa; margin-bottom:10px;">Wild & Earthy</p>
+                </div>
+                <button class="buy-btn" onclick="addToCart('Harrar', 20)">Add to Cart - $20</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tomoca Coffee. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart Sidebar UI -->
+    <div class="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="cart-total-price">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <div id="toast">Item added to cart!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
